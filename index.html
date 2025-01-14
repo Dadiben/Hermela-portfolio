@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermela Teffera's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        nav {
+            display: flex;
+        }
+        nav button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        nav button:hover {
+            background-color: #f1f1f1;
+        }
+        section {
+            padding: 20px;
+        }
+        .project {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s; /* Added transition for hover effect */
+        }
+        .project:hover {
+            transform: scale(1.02); /* Slightly scale on hover */
+        }
+        .project-img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px 0 0 8px;
+        }
+        .project-info {
+            padding: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+       
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="1.jpg" alt="Profile Image" class="profile-img">
+    <h1>Hermela Teffera</h1>
+    <nav>
+        <button id="aboutBtn">About</button>
+        <a href="https://www.linkedin.com/in/hermela-teffera-58266a346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=
+        android_app" target="_blank">
+            <button>Contact</button>
+        </a>
+    </nav>
+</header>
+<section>
+    <h2>Projects</h2>
+    <div class="project">
+        <img src="2.jpg" alt="Asking Based Questionnaire" class="project-img">
+        <div class="project-info">
+            <h3>Asking Based Questionnaire</h3>
+            <p>Me and my group members asked different questions based on questionnaire.</p>
+        </div>
+    </div>
+    <div class="project">
+        <img src="3.jpg" alt="Residence File Management System" class="project-img">
+        <div class="project-info">
+            <h3>Residence File Management System</h3>
+            <p>It is designed to create a digital and organized way to manage records related to
+residents in a specific location. This could be an apartment complex, a gated community, a
+nursing home, a student dormitory, or even a small neighborhood.</p>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2025 Hermela Teffera</p>
+</footer>
+<div id="aboutModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>About Me</h2>
+        <p>This is the about section content. I am a passionate developer with experience in
+building web and mobile applications.</p>
+    </div>
+</div>
+<script>
+    document.getElementById("aboutBtn").onclick = function() {
+        document.getElementById("aboutModal").style.display = "block";
+    }
+    document.getElementsByClassName("close")[0].onclick = function() {
+        document.getElementById("aboutModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("aboutModal")) {
+            document.getElementById("aboutModal").style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
